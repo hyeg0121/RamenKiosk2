@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 import javax.swing.ImageIcon;
+import javax.swing.JComponent;
 import javax.swing.JFrame;
 
 public class CommonFrame extends JFrame {
@@ -29,13 +30,10 @@ public class CommonFrame extends JFrame {
 	}
 	
 	/* 생성자 */
-	public CommonFrame() {}
-	
-	public CommonFrame(String title) {
+	public CommonFrame() {
 		setSize(450, 800);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		setLocationRelativeTo(null);
-		setIconImage(new ImageIcon(CommonFrame.class.getResource("../image/frameIcon.png")).getImage());
 		setResizable(true);
 	}
 
@@ -71,5 +69,10 @@ public class CommonFrame extends JFrame {
 		}
 		
 		return null;
+	}
+	
+	public static JComponent setBounds(JComponent comp, int x, int y, int width, int height) {
+		comp.setBounds(x, y, width, height);
+		return comp;
 	}
 }
