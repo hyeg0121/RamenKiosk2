@@ -20,7 +20,7 @@ public class CommonFrame extends JFrame {
 	static Statement stmt;
 	static {
 		try {
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/?allowLoadLocalInfile=true",
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ramenkiosk",
 					"root", "1234");
 			stmt = con.createStatement();
 		} catch (Exception e) {
