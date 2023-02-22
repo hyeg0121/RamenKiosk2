@@ -10,8 +10,12 @@ public class Start extends KioskFrame {
 		KioskPanel pnl = new KioskPanel(getImage("mainBg"));
 		add(pnl);
 		
+		// 시작 버튼
 		KioskBtn startBtn = new KioskBtn("startBtn");
 		pnl.add(setBounds(startBtn, 100, 400, 225, 60));
+		startBtn.addActionListener(e -> {
+			new ChoiceRamen().setVisible(true);
+		});
 		
 		KioskBtn managerBtn = new KioskBtn("managerBtn");
 		pnl.add(setBounds(managerBtn, 140, 600, 150, 40));
