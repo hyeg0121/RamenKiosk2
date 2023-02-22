@@ -17,9 +17,9 @@ public class KioskFrame extends JFrame{
 	// TODO : 프레임이 화면 중앙에 나타나지 않는 오류 해결하기
 	public KioskFrame() {
 		setLayout(null);
-		setLocationRelativeTo(null);
 		setTitle("뽀글뽀글 키오스크");
 		setSize(WIDTH, HEIGHT);
+		setLocationRelativeTo(null);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 	}
 	
