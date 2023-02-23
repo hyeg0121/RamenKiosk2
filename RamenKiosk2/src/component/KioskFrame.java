@@ -11,6 +11,7 @@ import java.sql.Statement;
 import javax.swing.ImageIcon;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 public class KioskFrame extends JFrame{
 	
@@ -83,5 +84,10 @@ public class KioskFrame extends JFrame{
 		return null;
 	}
 	
+	
+	//메세지 창
+	public static void msg(String text) {
+		JOptionPane.showMessageDialog(null, text, "뽀글뽀글 키오스크", JOptionPane.INFORMATION_MESSAGE);
+	}
 	
 }	
