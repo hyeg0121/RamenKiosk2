@@ -19,6 +19,9 @@ public class Start extends KioskFrame {
 		
 		KioskBtn managerBtn = new KioskBtn("managerBtn");
 		pnl.add(setBounds(managerBtn, 140, 600, 150, 40));
+		managerBtn.addActionListener(e -> {
+			new ManagerLogIn().setVisible(true);
+		});
 	}
 	
 	public static void main(String[] args) {
