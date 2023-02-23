@@ -13,7 +13,7 @@ public class KioskBtn extends JButton {
 		setRolloverIcon(new ImageIcon(KioskBtn.class.getResource("../images/"+imgName+".png")));
 		setRolloverSelectedIcon(new ImageIcon(KioskBtn.class.getResource("../images/"+imgName+".png")));
 		setFocusPainted(false);
-		setBackground(Color.WHITE);
+		setContentAreaFilled(false);
 		setBorder(null);
 	}
 }
