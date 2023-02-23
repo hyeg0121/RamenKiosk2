@@ -15,10 +15,7 @@ import component.KioskFrame;
 
 public class ManagerLogIn extends KioskFrame {
 	
-	Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ramenkiosk", "root", "1234");
-	Statement stmt = con.createStatement();
-	
-	public ManagerLogIn() throws SQLException {
+	public ManagerLogIn() {
 		setSize(300, 150);
 		setTitle("관리자 로그인");
 		setLocationRelativeTo(null);
@@ -35,18 +32,24 @@ public class ManagerLogIn extends KioskFrame {
 		JButton btn = new JButton("로그인");
 		add(setBounds(btn, 190, 20, 80, 64));
 		btn.addActionListener(e -> {
-			// TODO : 로그인 기능 만들기
-			new ManagerMain().setVisible(true);
+			try (var rs = getResultSet("select * from member where m_no = 1")){  //1번은 관리자 계정
+				rs.next();
+				
+				if( idTf.getText().equals(rs.getString("m_name")) &&
+					pwTf.getText().equals(rs.getString("m_pw"))) {
+					msg("관리자로 로그인합니다.");
+					new ManagerMain().setVisible(true);
+					this.dispose();
+				}
+				
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
 		});
 		
 	}
-	public static void main(String[] args) throws SQLException {
-		try {
-			new ManagerLogIn().setVisible(true);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	public static void main(String[] args){
+		new ManagerLogIn().setVisible(true);
 	}
 
 }
