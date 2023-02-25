@@ -16,4 +16,15 @@ public class KioskBtn extends JButton {
 		setContentAreaFilled(false);
 		setBorder(null);
 	}
+	
+	public KioskBtn(String imgName, String text) {
+		setIcon(new ImageIcon(KioskBtn.class.getResource("../images/"+imgName+".png")));
+		setRolloverIcon(new ImageIcon(KioskBtn.class.getResource("../images/"+imgName+".png")));
+		setRolloverSelectedIcon(new ImageIcon(KioskBtn.class.getResource("../images/"+imgName+".png")));
+		setFocusPainted(false);
+		setContentAreaFilled(false);
+		setBorder(null);
+		setText(text);
+	}
+	
 }
