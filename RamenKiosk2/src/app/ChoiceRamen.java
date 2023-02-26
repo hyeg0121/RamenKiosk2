@@ -55,6 +55,8 @@ public class ChoiceRamen extends KioskFrame{
 		btn[1].addActionListener(e -> {
 
 			try (var rs = getResultSet("select * from ramen where r_name = ?", btn[1].getText())){
+				rs.next();
+				
 				//라면 값
 				Payment.ramenPrice = rs.getInt("r_price");
 
@@ -68,6 +70,8 @@ public class ChoiceRamen extends KioskFrame{
 		btn[2].addActionListener(e -> {
 
 			try (var rs = getResultSet("select * from ramen where r_name = ?", btn[2].getText())){
+				rs.next();
+				
 				//라면 값
 				Payment.ramenPrice = rs.getInt("r_price");
 
@@ -80,6 +84,8 @@ public class ChoiceRamen extends KioskFrame{
 		btn[3].addActionListener(e -> {
 
 			try (var rs = getResultSet("select * from ramen where r_name = ?", btn[3].getText())){
+				rs.next();
+				
 				//라면 값
 				Payment.ramenPrice = rs.getInt("r_price");
 
@@ -92,6 +98,8 @@ public class ChoiceRamen extends KioskFrame{
 		btn[4].addActionListener(e -> {
 
 			try (var rs = getResultSet("select * from ramen where r_name = ?", btn[4].getText())){
+				rs.next();
+				
 				//라면 값
 				Payment.ramenPrice = rs.getInt("r_price");
 
@@ -104,6 +112,8 @@ public class ChoiceRamen extends KioskFrame{
 		btn[5].addActionListener(e -> {
 
 			try (var rs = getResultSet("select * from ramen where r_name = ?", btn[5].getText())){
+				rs.next();
+				
 				//라면 값
 				Payment.ramenPrice = rs.getInt("r_price");
 
