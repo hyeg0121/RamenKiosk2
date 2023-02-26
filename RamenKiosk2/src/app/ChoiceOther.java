@@ -37,7 +37,7 @@ public class ChoiceOther extends KioskFrame {
 			}//try
 		}//for
 		
-		area.setBorder(new TitledBorder(new LineBorder(Color.black), "주문 금액"));
+		area.setBorder(new LineBorder(Color.black));
 		area.setEditable(false);
 		area.setFont(new Font("맑은 고딕", 0, 14));
 		pnl.add(setBounds(area, 50, 450, 350, 200));
@@ -60,6 +60,11 @@ public class ChoiceOther extends KioskFrame {
 
 		});
 		
+		KioskBtn backBtn = new KioskBtn("backBtn");
+		pnl.add(setBounds(backBtn, 20, 670, 200, 60));
+		
+		KioskBtn chargeBtn = new KioskBtn("chargeBtn");
+		pnl.add(setBounds(chargeBtn, 225, 670, 200, 60));
 
 	}
 
