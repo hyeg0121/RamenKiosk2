@@ -37,11 +37,19 @@ public class ChoiceOther extends KioskFrame {
 			}//try
 		}//for
 		
+		//TextArea
 		area.setBorder(new LineBorder(Color.black));
 		area.setEditable(false);
-		area.setFont(new Font("맑은 고딕", 0, 14));
+		area.setFont(new Font("맑은 고딕", Font.BOLD, 18));
 		pnl.add(setBounds(area, 50, 450, 350, 200));
-		area.setText("안녕:");
+		
+		try(var rs = getResultSet("select r_price from ramen where r_name = ?", rName)){
+			rs.next();
+			area.setText(rName+"\t\t" + rs.getString(1) + " 원\n");
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 		// TODO : 효율적인 코드로 수정하기
 
 		btn[0].addActionListener(e ->{
