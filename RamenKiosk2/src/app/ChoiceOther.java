@@ -70,7 +70,10 @@ public class ChoiceOther extends KioskFrame {
 		
 		KioskBtn backBtn = new KioskBtn("backBtn");
 		pnl.add(setBounds(backBtn, 20, 670, 200, 60));
-		
+		backBtn.addActionListener(e ->{
+			new ChoiceRamen().setVisible(true);
+			dispose();
+		});
 		KioskBtn chargeBtn = new KioskBtn("chargeBtn");
 		pnl.add(setBounds(chargeBtn, 225, 670, 200, 60));
 
