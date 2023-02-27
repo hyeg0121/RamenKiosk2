@@ -41,6 +41,32 @@ public class SignUp extends KioskFrame {
 			}
 		});
 		
+		btn.addActionListener(e -> {
+			
+			if (nameTf.getText().length() == 0 ||
+				pwTf.getText().length() == 0) {
+				msg("빈칸이 존재합니다.");
+				return ;
+			}
+			
+			if (nameTf.getText().length() > 10) {
+				msg("이름은 최대 10글자 입니다.");
+				return;
+			}
+			
+			if (pwTf.getText().length() > 4) {
+				msg("비밀번호는 숫자 4자리 입니다.");
+			}
+			
+			try {
+				int pw = Integer.parseInt(pwTf.getText());
+			}catch (Exception ex) {
+				msg("비밀번호는 숫자로만 이루어져야 합니다.");
+				return;
+			}
+		});
+		
+		
 	}
 
 	public static void main(String[] args) {
