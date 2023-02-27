@@ -14,6 +14,13 @@ public class EarnPoint extends KioskFrame {
 		for (int i = 0; i < btn.length; i++) {
 			btn[i] = new KioskBtn("point"+(i+1));
 			pnl.add(setBounds(btn[i], 125, 360 + i*110 , 200, 60));
+			
+			if(i == 2) {
+				btn[i].addActionListener(e ->{
+					new SingUp().setVisible(true);
+					dispose();
+				});
+			}
 		}
 	}
 	public static void main(String[] args) {
