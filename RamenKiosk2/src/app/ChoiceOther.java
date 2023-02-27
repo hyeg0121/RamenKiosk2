@@ -2,6 +2,7 @@ package app;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
@@ -55,10 +56,14 @@ public class ChoiceOther extends KioskFrame {
 		// TODO : 효율적인 코드로 수정하기
 
 		btn[0].addActionListener(e ->{
-			if(isChoice[0] ) {
-				var answer = JOptionPane.showConfirmDialog(null, "취소하시겠습니까?");
-			}
+			
 			try (var rs = getResultSet("select o_price from other where o_name = ?", btn[0].getText())){
+				
+				if(isChoice[0] ) {
+					JOptionPane.showMessageDialog(null, "뽀글이 사용 안전을 위해 사리는 각각 하나씩만 추가할 수 있습니다.");
+					return;
+				}
+				
 				rs.next();
 				area.setText(area.getText()+btn[0].getText()+"\t\t"+rs.getInt(1)+"원\n");
 				isChoice[0] = true;
@@ -68,6 +73,12 @@ public class ChoiceOther extends KioskFrame {
 		});
 
 		btn[1].addActionListener(e ->{
+			
+			if(isChoice[1] ) {
+				JOptionPane.showMessageDialog(null, "뽀글이 사용 안전을 위해 사리는 각각 하나씩만 추가할 수 있습니다.");
+				return;
+			}
+			
 			try (var rs = getResultSet("select o_price from other where o_name = ?", btn[0].getText())){
 				rs.next();
 				area.setText(area.getText()+btn[1].getText()+"\t\t"+rs.getInt(1)+"원\n");
@@ -78,6 +89,12 @@ public class ChoiceOther extends KioskFrame {
 		});
 
 		btn[2].addActionListener(e ->{
+			
+			if(isChoice[2] ) {
+				JOptionPane.showMessageDialog(null, "뽀글이 사용 안전을 위해 사리는 각각 하나씩만 추가할 수 있습니다.");
+				return;
+			}
+			
 			try (var rs = getResultSet("select o_price from other where o_name = ?", btn[0].getText())){
 				rs.next();
 				area.setText(area.getText()+btn[2].getText()+"\t\t"+rs.getInt(1)+"원\n");
@@ -88,6 +105,12 @@ public class ChoiceOther extends KioskFrame {
 		});
 
 		btn[3].addActionListener(e ->{
+			
+			if(isChoice[3] ) {
+				JOptionPane.showMessageDialog(null, "뽀글이 사용 안전을 위해 사리는 각각 하나씩만 추가할 수 있습니다.");
+				return;
+			}
+			
 			try (var rs = getResultSet("select o_price from other where o_name = ?", btn[0].getText())){
 				rs.next();
 				area.setText(area.getText()+btn[3].getText()+"\t\t"+rs.getInt(1)+"원\n");
