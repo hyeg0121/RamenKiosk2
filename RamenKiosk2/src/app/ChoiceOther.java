@@ -3,6 +3,7 @@ package app;
 import java.awt.Color;
 import java.awt.Font;
 
+import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 import javax.swing.border.LineBorder;
 import javax.swing.border.TitledBorder;
@@ -14,6 +15,7 @@ import component.KioskPanel;
 public class ChoiceOther extends KioskFrame {
 
 	JTextArea area = new JTextArea();
+	boolean isChoice[] = { false, false, false, false };
 	
 	public ChoiceOther(String rName) {
 		var pnl = new KioskPanel(getImage("otherBg"));
@@ -53,19 +55,46 @@ public class ChoiceOther extends KioskFrame {
 		// TODO : 효율적인 코드로 수정하기
 
 		btn[0].addActionListener(e ->{
-
+			if(isChoice[0] ) {
+				var answer = JOptionPane.showConfirmDialog(null, "취소하시겠습니까?");
+			}
+			try (var rs = getResultSet("select o_price from other where o_name = ?", btn[0].getText())){
+				rs.next();
+				area.setText(area.getText()+btn[0].getText()+"\t\t"+rs.getInt(1)+"원\n");
+				isChoice[0] = true;
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			}
 		});
 
 		btn[1].addActionListener(e ->{
-
+			try (var rs = getResultSet("select o_price from other where o_name = ?", btn[0].getText())){
+				rs.next();
+				area.setText(area.getText()+btn[1].getText()+"\t\t"+rs.getInt(1)+"원\n");
+				isChoice[1] = true;
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			}
 		});
 
 		btn[2].addActionListener(e ->{
-
+			try (var rs = getResultSet("select o_price from other where o_name = ?", btn[0].getText())){
+				rs.next();
+				area.setText(area.getText()+btn[2].getText()+"\t\t"+rs.getInt(1)+"원\n");
+				isChoice[2] = true;
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			}
 		});
 
 		btn[3].addActionListener(e ->{
-
+			try (var rs = getResultSet("select o_price from other where o_name = ?", btn[0].getText())){
+				rs.next();
+				area.setText(area.getText()+btn[3].getText()+"\t\t"+rs.getInt(1)+"원\n");
+				isChoice[3] = true;
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			}
 		});
 		
 		KioskBtn backBtn = new KioskBtn("backBtn");
