@@ -1,6 +1,8 @@
 package app;
 
 import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.JLabel;
 import javax.swing.JPasswordField;
@@ -32,6 +34,12 @@ public class SignUp extends KioskFrame {
 		
 		JPasswordField pwTf = new JPasswordField();
 		pnl.add(setBounds(pwTf, 60, 410, 300, 35));
+		pwTf.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				msg("비밀번호로 사용될 숫자 4자리를 입력하세요.");
+			}
+		});
 		
 	}
 
