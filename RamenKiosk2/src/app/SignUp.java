@@ -56,6 +56,7 @@ public class SignUp extends KioskFrame {
 			
 			if (pwTf.getText().length() > 4) {
 				msg("비밀번호는 숫자 4자리 입니다.");
+				return;
 			}
 			
 			try {
@@ -63,6 +64,20 @@ public class SignUp extends KioskFrame {
 			}catch (Exception ex) {
 				msg("비밀번호는 숫자로만 이루어져야 합니다.");
 				return;
+			}
+			
+			try{
+				updateSQL("INSERT INTO member (m_name, m_pw, m_point) "
+						+ "VALUES ( ?, ?, 0 )", 
+						nameTf.getText(),
+						pwTf.getText()
+						);
+				msg("가입이 완료되었습니다.");
+				
+				new EarnPoint().setVisible(true);
+				dispose();
+			} catch (Exception ex) {
+				ex.printStackTrace();
 			}
 		});
 		
