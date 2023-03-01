@@ -3,6 +3,7 @@ package app;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.Arrays;
 
 import javax.swing.JLabel;
 import javax.swing.JPasswordField;
@@ -35,6 +36,13 @@ public class LogIn extends KioskFrame{
 		JPasswordField pwTf = new JPasswordField();
 		pnl.add(setBounds(pwTf, 60, 410, 300, 35));
 		
+		btn.addActionListener(e -> {
+			if (nameTf.getText().length() == 0 ||
+				pwTf.getText().length() == 0) {
+				msg("빈칸이 존재합니다.");
+				return ;
+			}
+		});
 		
 	}
 
