@@ -46,7 +46,7 @@ public class ChoiceRamen extends KioskFrame{
 				Payment.ramenPrice = rs.getInt("r_price");
 
 				new ChoiceOther(btn[0].getText()).setVisible(true);
-
+				dispose();
 			} catch (Exception ex) {
 				ex.printStackTrace();
 			}
@@ -61,7 +61,7 @@ public class ChoiceRamen extends KioskFrame{
 				Payment.ramenPrice = rs.getInt("r_price");
 
 				new ChoiceOther(btn[1].getText()).setVisible(true);
-
+				dispose();
 			} catch (Exception ex) {
 				ex.printStackTrace();
 			}
@@ -76,7 +76,7 @@ public class ChoiceRamen extends KioskFrame{
 				Payment.ramenPrice = rs.getInt("r_price");
 
 				new ChoiceOther(btn[2].getText()).setVisible(true);
-
+				dispose();
 			} catch (Exception ex) {
 				ex.printStackTrace();
 			}
@@ -90,7 +90,7 @@ public class ChoiceRamen extends KioskFrame{
 				Payment.ramenPrice = rs.getInt("r_price");
 
 				new ChoiceOther(btn[3].getText()).setVisible(true);
-
+				dispose();
 			} catch (Exception ex) {
 				ex.printStackTrace();
 			}
@@ -104,7 +104,7 @@ public class ChoiceRamen extends KioskFrame{
 				Payment.ramenPrice = rs.getInt("r_price");
 
 				new ChoiceOther(btn[4].getText()).setVisible(true);
-
+				dispose();
 			} catch (Exception ex) {
 				ex.printStackTrace();
 			}
@@ -118,7 +118,7 @@ public class ChoiceRamen extends KioskFrame{
 				Payment.ramenPrice = rs.getInt("r_price");
 
 				new ChoiceOther(btn[5].getText()).setVisible(true);
-
+				dispose();
 			} catch (Exception ex) {
 				ex.printStackTrace();
 			}
