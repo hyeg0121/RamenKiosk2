@@ -15,12 +15,14 @@ public class Start extends KioskFrame {
 		pnl.add(setBounds(startBtn, 100, 400, 225, 60));
 		startBtn.addActionListener(e -> {
 			new ChoiceRamen().setVisible(true);
+			dispose();
 		});
 		
 		KioskBtn managerBtn = new KioskBtn("managerBtn");
 		pnl.add(setBounds(managerBtn, 140, 600, 150, 40));
 		managerBtn.addActionListener(e -> {
 			new ManagerLogIn().setVisible(true);
+			dispose();
 		});
 	}
 	
