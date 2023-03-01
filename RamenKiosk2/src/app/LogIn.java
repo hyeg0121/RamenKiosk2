@@ -42,6 +42,18 @@ public class LogIn extends KioskFrame{
 				msg("빈칸이 존재합니다.");
 				return ;
 			}
+			
+			try(var rs = getResultSet("select * from member where m_name = ? and m_pw = ?", nameTf.getText(), pwTf.getText())){
+				if(rs.next()) {
+					int point = (int)(Payment.otherPrice + Payment.ramenPrice * 0.1);
+					msg(point+"p 가 적립되었습니다. 현재 포인트 "+rs.getInt("m_point")+"p");
+				}else {
+					msg("아이디 또는 비밀번호가 일치하지 않습니다.");
+				}
+				
+			}catch(Exception ex) {
+				ex.printStackTrace();
+			}
 		});
 		
 	}
