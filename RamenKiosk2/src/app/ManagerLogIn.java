@@ -40,6 +40,10 @@ public class ManagerLogIn extends KioskFrame {
 					msg("관리자로 로그인합니다.");
 					new ManagerMain().setVisible(true);
 					this.dispose();
+				}else {
+					msg("아이디와 비밀번호가 일치하지 않습니다.");
+					new Start().setVisible(true);
+					dispose();
 				}
 				
 			} catch (Exception e2) {
