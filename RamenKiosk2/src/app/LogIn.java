@@ -45,8 +45,10 @@ public class LogIn extends KioskFrame{
 			
 			try(var rs = getResultSet("select * from member where m_name = ? and m_pw = ?", nameTf.getText(), pwTf.getText())){
 				if(rs.next()) {
-					int point = (int)(Payment.otherPrice + Payment.ramenPrice * 0.1);
+					int point = (int)((Payment.otherPrice + Payment.ramenPrice) * 0.1);
+					updateSQL("update member set m_point = ? where m_name = ? and m_pw = ?", point, nameTf.getText(), pwTf.getText());
 					msg(point+"p 가 적립되었습니다. 현재 포인트 "+rs.getInt("m_point")+"p");
+					
 				}else {
 					msg("아이디 또는 비밀번호가 일치하지 않습니다.");
 				}
