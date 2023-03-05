@@ -40,6 +40,13 @@ public class EditProduct extends KioskFrame {
 		JButton btn = new JButton("수정");
 		add(setBounds(btn, 75, 120, 200, 25));
 		btn.addActionListener(e -> {
+			
+			if(stockTf.getText().length() == 0) {
+				msg("빈칸은 존재할 수 없습니다.");
+				stockTf.grabFocus();
+				return;
+			}
+			
 			updateSQL("update other set o_stock = ? where o_name =?", 
 					Integer.parseInt(stockTf.getText()), otherName);
 			msg("수정이 완료되었습니다.");
